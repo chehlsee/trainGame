@@ -2,14 +2,17 @@ $(function(){
 
   // Initialize Firebase
   const config = {
-      apiKey: "AIzaSyCn6bxidmbH6601u0islr5_xyteVr41dLI",
-      authDomain: "codersay-53fd9.firebaseapp.com",
-      databaseURL: "https://codersay-53fd9.firebaseio.com",
-      projectId: "codersay-53fd9",
-      storageBucket: "codersay-53fd9.appspot.com",
-      messagingSenderId: "878808016417"
+      apiKey: "AIzaSyAem3mnAMP-kboKu6QWGigRg0omzPdv48s",
+      authDomain: "classwork-d65b3.firebaseapp.com",
+      databaseURL: "https://classwork-d65b3.firebaseio.com",
+      projectId: "classwork-d65b3",
+      storageBucket: "classwork-d65b3.appspot.com",
+      messagingSenderId: "1071417828250"
   };
   firebase.initializeApp(config);
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 
   // Hold the db in a variable
   const db = firebase.database();

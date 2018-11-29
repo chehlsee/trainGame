@@ -10,7 +10,7 @@ In this assignment, you'll create a train schedule application that incorporates
 
 ### Technology Used
 
-Firebase
+Firebase Moment.js
 
 
 ### Instructions

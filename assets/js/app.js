@@ -50,19 +50,19 @@ $(document).ready(function () {
     $("#frequency").val("");
 
     // make sure firebase is connected a load
-    database.ref().on("trainAdded", function (trainUpdated) {
+    database.ref().on("child_added", function (childSnapshot) {
 
       // log everything that is being input on the form
-      console.log(trainUpdated.val().trainName);
-      console.log(trainUpdated.val().destination);
-      console.log(trainUpdated.val().trainTime);
-      console.log(trainUpdated.val().frequency);
+      console.log(childSnapshot.val().trainName);
+      console.log(childSnapshot.val().destination);
+      console.log(childSnapshot.val().trainTime);
+      console.log(childSnapshot.val().frequency);
 
       // all infomration submitted on form will be put into the table variables 
-      var trainNameTable = trainUpdated.val().trainName;
-      var destinationTable = trainUpdated.val().destination;
-      var frequencyTable = trainUpdated.val().frequency;
-      var nextArrivalTable = trainUpdated.val().nextArrival;
+      var trainNameTable = childSnapshot.val().trainName;
+      var destinationTable = childSnapshot.val().destination;
+      var frequencyTable = childSnapshot.val().frequency;
+      var nextArrivalTable = childSnapshot.val().nextArrival;
 
       // apply trainTime to the time with the format of hh:mm and then you will subtract one year time
       var firstTrainTime = moment(nextArrivalTable, "hh:mm").subtract(1, "years");

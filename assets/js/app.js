@@ -12,7 +12,6 @@ $(document).ready(function () {
 
   firebase.initializeApp(config);
 
-  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 
   // create a variale to reference the database service
   var database = firebase.database();
@@ -25,7 +24,7 @@ $(document).ready(function () {
 
   // when the submit button is pressed the following function will run
 
-  $(submit - button).on("click", function (event) {
+  $("#submit-button").on("click", function (event) {
     // method stops the default action of an element from happening. for example: prevent a submit button from submitting a form or prevent a link from following the URL
     event.preventDefault();
 
@@ -49,9 +48,13 @@ $(document).ready(function () {
     $("#trainTime").val("");
     $("#frequency").val("");
 
+  });
+
+
+
     // make sure firebase is connected a load
     database.ref().on("child_added", function (childSnapshot) {
-
+      console.log("hi");
       // log everything that is being input on the form
       console.log(childSnapshot.val().trainName);
       console.log(childSnapshot.val().destination);
@@ -62,10 +65,10 @@ $(document).ready(function () {
       var trainNameTable = childSnapshot.val().trainName;
       var destinationTable = childSnapshot.val().destination;
       var frequencyTable = childSnapshot.val().frequency;
-      var nextArrivalTable = childSnapshot.val().nextArrival;
+      var trainTimeTable = childSnapshot.val().trainTime;
 
       // apply trainTime to the time with the format of hh:mm and then you will subtract one year time
-      var firstTrainTime = moment(nextArrivalTable, "hh:mm").subtract(1, "years");
+      var firstTrainTime = moment(trainTimeTable, "hh:mm").subtract(1, "years");
       // after you subtract 1 year then apply the current time to the current variable
       var currentTime = moment();
       // next you are going to convert the variable for firstTrainTime to minutes
@@ -79,20 +82,14 @@ $(document).ready(function () {
 
       // all of the items in the list apply them to the table
       $("#train-table").append("<tr><td>" +
-        trainNameTable + "</td>>td>" +
-        destinationTable + "</td>>td>" +
-        frequencyTable + "</td>>td>" +
-        nextTrainInformation + "</td>>td>" +
-        minutesTillNextTrain + "</td>>td>"
+        trainNameTable + "</td><td>" +
+        destinationTable + "</td><td>" +
+        frequencyTable + "</td><td>" +
+        nextTrainInformation + "</td><td>" +
+        minutesTillNextTrain + "</td></tr>"
       );
 
     });
-
-  });
-
-
-
-
 
 
 

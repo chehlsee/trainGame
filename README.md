@@ -26,6 +26,18 @@ Firebase Moment.js
     * Frequency -- in minutes
     
     * After the form is submitted by clicking the the submit button by the user the trainGame will calculate when the next train will arive; this should be similar to the current time.
+    
+
+To run the application locally, first clone this repository with the following command.
+
+	git clone git@github.com:chehlsee/trainGame.git
+	
+Next, install the application dependencies.
+
+	cd trainGame
+ 
+	
+Now, open the local application at the URL: `https://chehlsee.github.io/trainGame/`.
  
 # Copyright
  (C) Chehlsee 2018. All Rights Reserved.

@@ -27,3 +27,5 @@ Firebase Moment.js
     
     * After the form is submitted by clicking the the submit button by the user the trainGame will calculate when the next train will arive; this should be similar to the current time.
  
+# Copyright
+ (C) Chehlsee 2018. All Rights Reserved.
